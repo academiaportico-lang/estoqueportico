@@ -1,0 +1,177 @@
+/* Configurações de Layout Fixo */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Seção Superior (Fixa) */
+.secao-fixa {
+    flex-shrink: 0; 
+    padding: 20px 20px 10px 20px;
+    background-color: #f5f5f5;
+    z-index: 10;
+}
+
+.container-header {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.logo-portico {
+    font-size: 50px;
+    margin: 0;
+    color: #000000;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    line-height: 1;
+}
+
+.logo-portico span {
+    color: #FF0000;
+}
+
+h2 {
+    font-size: 16px;
+    color: #44546a;
+    margin: 5px 0 0 0;
+    text-transform: uppercase;
+}
+
+.header-filtros {
+    padding: 15px;
+    background: #e9ecef;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo do Campo de Busca */
+.grupo-filtros-busca {
+    width: 100%;
+}
+
+#buscaTexto {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+#buscaTexto:focus {
+    border-color: #44546a;
+    box-shadow: 0 0 5px rgba(68, 84, 106, 0.3);
+}
+
+/* Área da Tabela (Com Scroll) */
+.tabela-container {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding: 0 20px 20px 20px;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    font-size: 12px;
+}
+
+thead th { 
+    background-color: #44546a; 
+    color: white; 
+    padding: 12px 10px; 
+    text-align: left; 
+    border: 1px solid #333; 
+    position: sticky; 
+    top: 0;
+}
+
+td { 
+    padding: 8px 10px; 
+    border: 1px solid #d9d9d9; 
+}
+
+/* Botões e Selects */
+.grupo-filtros, .grupo-filtros-select { display: flex; gap: 10px; flex-wrap: wrap; }
+
+button { 
+    padding: 8px 15px; 
+    cursor: pointer; 
+    border: 1px solid #ccc; 
+    background: white; 
+    font-weight: bold; 
+    border-radius: 4px;
+}
+
+.btn-positivo { background-color: #e2efda; color: #375623; }
+.btn-negativo { background-color: #fce4d6; color: #843c0c; }
+
+select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-width: 220px;
+}
+
+/* Cores das Linhas */
+.linha-positiva { background-color: #e2efda !important; } 
+.linha-negativa { background-color: #fce4d6 !important; } 
+.linha-zero { background-color: #ffffff !important; }
+
+tr:hover { filter: brightness(0.95); }
+
+
+.btn-limpar {
+    background-color: #44546a;
+    color: white;
+    border: none;
+    margin-left: auto; /* Joga o botão para a direita se houver espaço */
+}
+
+.btn-limpar:hover {
+    background-color: #2e3b4e;
+}
+
+/* ... manter o CSS anterior ... */
+
+.grupo-filtros-select {
+    display: flex;
+    align-items: center; /* Alinha o contador verticalmente com os selects */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#contadorResultados {
+    font-size: 14px;
+    font-weight: bold;
+    color: #44546a;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-limpar {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-limpar:hover {
+    background-color: #5a6268;
+}
+
+/* ... manter o restante do CSS da resposta anterior ... */

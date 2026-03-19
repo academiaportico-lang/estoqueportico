@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Portico - XML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="secao-fixa">
+        <div class="container-header">
+            <h1 class="logo-portico">P<span>O</span>RTIC<span>O</span></h1>
+            <h2>Estoque MP / Peças</h2>
+        </div>
+
+        <div class="header-filtros">
+            <div class="grupo-filtros">
+                <button onclick="definirFiltroSaldo('todos')">TODOS</button>
+                <button class="btn-positivo" onclick="definirFiltroSaldo('positivo')">SALDO > 0</button>
+                <button class="btn-negativo" onclick="definirFiltroSaldo('negativo')">SALDO < 0</button>
+                <button class="btn-zero" onclick="definirFiltroSaldo('zero')">SALDO = 0</button>
+                <button class="btn-limpar" onclick="limparFiltros()">LIMPAR FILTROS</button>
+            </div>
+
+            <div class="grupo-filtros-busca">
+                <input type="text" id="buscaTexto" onkeyup="aplicarFiltros()" placeholder="Buscar por código ou descrição...">
+            </div>
+
+            <div class="grupo-filtros-select">
+                <select id="filtroFamilia" onchange="aplicarFiltros()">
+                    <option value="">TODAS AS FAMÍLIAS</option>
+                </select>
+
+                <select id="filtroDeposito" onchange="aplicarFiltros()">
+                    <option value="">TODOS OS DEPÓSITOS</option>
+                </select>
+
+                <span id="contadorResultados">Retornou 0 resultados</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabela-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>CÓDIGO</th>
+                    <th>DESCRIÇÃO</th>
+                    <th>SALDO DISPONÍVEL</th>
+                    <th>GRUPO ESTOQUE</th>
+                    <th>FAMÍLIA MATERIAL</th>
+                    <th>DEPÓSITO</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela"></tbody>
+        </table>
+    </div>
+
+    <script src="dados.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

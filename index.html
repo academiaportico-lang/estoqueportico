@@ -21,18 +21,19 @@
                 <button class="btn-negativo" onclick="definirFiltroSaldo('negativo')">SALDO < 0</button>
                 <button class="btn-zero" onclick="definirFiltroSaldo('zero')">SALDO = 0</button>
                 <button class="btn-limpar" onclick="limparFiltros()">LIMPAR FILTROS</button>
+                <button onclick="exportarDados()" style="background-color: #28a745; color: white; border: none; margin-left: 10px; cursor: pointer;">💾 SALVAR ATUALIZAÇÃO</button>
             </div>
 
             <div class="grupo-filtros-busca">
-                <input type="text" id="buscaTexto" onkeyup="aplicarFiltros()" placeholder="Buscar por código ou descrição...">
+                <input type="text" id="buscaTexto" oninput="paginaAtual=1; aplicarFiltros()" placeholder="Buscar por código ou descrição..." style="text-transform: uppercase;">
             </div>
 
             <div class="grupo-filtros-select">
-                <select id="filtroFamilia" onchange="aplicarFiltros()">
+                <select id="filtroFamilia" onchange="paginaAtual=1; aplicarFiltros()">
                     <option value="">TODAS AS FAMÍLIAS</option>
                 </select>
 
-                <select id="filtroDeposito" onchange="aplicarFiltros()">
+                <select id="filtroDeposito" onchange="paginaAtual=1; aplicarFiltros()">
                     <option value="">TODOS OS DEPÓSITOS</option>
                 </select>
 
@@ -51,13 +52,18 @@
                     <th>GRUPO ESTOQUE</th>
                     <th>FAMÍLIA MATERIAL</th>
                     <th>DEPÓSITO</th>
+                    <th style="width: 100px;">CONTAGEM</th>
+                    <th>AÇÃO</th>
                 </tr>
             </thead>
             <tbody id="corpoTabela"></tbody>
         </table>
     </div>
 
-    <script src="dados.js"></script> 
+    <div class="paginacao-container" id="controlesPaginacao"></div>
+
+    <script src="dados.js"></script>
+    <script src="paginacao.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
